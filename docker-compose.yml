@@ -19,7 +19,7 @@ services:
       context: ./server
       dockerfile: Dockerfile
     environment:
-      - MODE=production
+      - NODE_ENV=production
     env_file:
       - ./server/config.env
     image: tvd-api
