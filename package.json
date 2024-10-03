@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "client": "cd client && npm start",
+    "server": "cd server && npm run dev",
+    "pyserver": "cd py-server && python server.py",
+    "all": "concurrently \"npm run server\" \" npm run client \"  \"npm run pyserver\""
+  },
+  "dependencies": {
+    "concurrently": "^7.3.0",
+    "mongodb": "^5.5.0"
+  }
+}
