@@ -12,3 +12,19 @@ A dashboard to collect, analyse, and visualize all teamwork activities (i.e., mu
    To run the client, in `/client`, run `npm start` in the console/terminal.
 
 4. The application will be running on `localhost:3000`.
+
+## Running the app using Docker.
+
+Note: Please ensure that environment variables are set as a `.env` file at the root and each service (i.e., client, server, nginx, and pyserver).
+
+To clean build and run the system:
+
+```bash
+docker-compose --env-file .env up --force-recreate --build
+```
+
+To simply run the system:
+
+```bash
+docker compose up
+```
