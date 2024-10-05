@@ -44,7 +44,7 @@ const CLASSROOM_SIZE = {
   },
   classroomAnalytics2024: {
     WIDTH: 13550,
-    HEIGHT: 12090,
+    HEIGHT: 13090,
   },
 };
 
@@ -62,7 +62,7 @@ const HIVE_CONSTANTS = {
     IMG_WIDTH: 2140,
     IMG_HEIGHT: 1889,
     X_ADJUSTMENT: 60,
-    Y_ADJUSTMENT: 0,
+    Y_ADJUSTMENT: 100,
     HEXAGON_OPACITY: "0.5",
   },
 };
