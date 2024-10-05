@@ -6,7 +6,7 @@ services:
       dockerfile: Dockerfile
     env_file:
       - ./client/.env
-    image: tvd-client
+    image: ${DOCKER_REPO}ttv-client:latest
     container_name: client
     ports:
       - "3000:3000"
@@ -21,8 +21,8 @@ services:
     environment:
       - NODE_ENV=production
     env_file:
-      - ./server/config.env
-    image: tvd-api
+      - ./server/.env
+    image: ${DOCKER_REPO}ttv-api:latest
     container_name: api
     ports:
       - "5002:5002"
@@ -37,7 +37,7 @@ services:
       - MODE=production
     env_file:
       - ./py-server/.env
-    image: tvd-py-server
+    image: ${DOCKER_REPO}ttv-py-server:latest
     container_name: pyserver
     ports:
       - "5003:5003"
@@ -49,7 +49,7 @@ services:
     build:
       context: ./nginx
       dockerfile: Dockerfile
-    image: tvd-nginx
+    image: ${DOCKER_REPO}ttv-nginx:latest
     container_name: nginx
     ports:
       - "3050:80"
