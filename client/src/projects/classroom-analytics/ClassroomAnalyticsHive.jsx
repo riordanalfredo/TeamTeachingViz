@@ -1,9 +1,10 @@
 import { useTimeline } from "../observation/visualisationComponents/TimelineContext";
 import { TimeSliderController } from "../observation/visualisationComponents/TimelineVisualisation";
 import { HiveView } from "../visualisations/hive";
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { useTracking } from "react-tracking";
 import { CoTeachVizView } from "../visualisations/coTeachViz";
+import { ArrowLeft } from "react-bootstrap-icons";
 
 const ClassroomAnalyticsHive = () => {
   const { range } = useTimeline();
@@ -13,6 +14,7 @@ const ClassroomAnalyticsHive = () => {
   let location = useLocation();
   const { simulationId } = useParams();
 
+  const navigate = useNavigate();
   const simulationDec = location.state.name;
 
   const styles = {
@@ -28,11 +30,28 @@ const ClassroomAnalyticsHive = () => {
       justifyContent: "space-between",
       alignItems: "start",
     },
+    backButton: {
+      position: "absolute",
+      alignSelf: "flex-start",
+    },
   };
 
   return (
     <Track>
       <div style={styles.container}>
+        <div style={styles.backButton}>
+          <ArrowLeft
+            style={{ cursor: "pointer" }}
+            onClick={() => {
+              trackEvent({
+                action: "click",
+                element: "returnToMainPage",
+              });
+              navigate("/main");
+            }}
+            size={"30px"}
+          />
+        </div>
         <h3>
           {simulationId}: {simulationDec}
         </h3>
