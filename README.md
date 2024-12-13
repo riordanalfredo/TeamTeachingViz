@@ -28,3 +28,5 @@ To simply run the system:
 ```bash
 docker compose up
 ```
+
+Please get in touch with riordan.alfredo@gmail.com or riordan.alfredo@monash.edu to gain access to environment variables and sample datasets.
